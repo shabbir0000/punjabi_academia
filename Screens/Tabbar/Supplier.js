@@ -12,54 +12,15 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 import React, { useEffect, useReducer, useRef, useMemo, useState, useCallback } from 'react';
-// import DateTimePickerModal from 'react-native-modal-datetime-picker';
-// import RadioGroup from 'react-native-radio-buttons-group';
 import tw from 'twrnc';
 import { Error, Input1, showToast } from '../../Screens/Universal/Input';
-import { Formik } from 'formik';
-import * as Yup from 'yup';
 import Screensheader from '../../Screens/Universal//Screensheader';
-import LinearGradient from 'react-native-linear-gradient';
-import { Dropdown } from 'react-native-element-dropdown';
-import storage from '@react-native-firebase/storage';
-import { ref1, app, db } from '../../Firebase';
-import {
-  arrayUnion,
-  doc,
-  setDoc,
-  updateDoc,
-  serverTimestamp,
-  collection,
-  where,
-  onSnapshot,
-} from 'firebase/firestore';
-
-import {
-  ref,
-  uploadBytesResumable,
-  listAll,
-  getDownloadURL,
-} from 'firebase/storage';
-import {
-  getDatabase,
-  set,
-  onValue,
-  orderByChild,
-  query,
-  startAt,
-  endAt,
-} from 'firebase/database';
-import FilePicker from 'react-native-document-picker';
-import uuid from 'react-native-uuid';
-import { getAuth } from 'firebase/auth';
-import { useFocusEffect, useIsFocused } from '@react-navigation/native';
-import { Buttonnormal } from '../Universal/Buttons';
-import LottieView from 'lottie-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 import RNFS from 'react-native-fs';
 import RNFetchBlob from 'rn-fetch-blob';
 import FileViewer from "react-native-file-viewer";
+import Share from 'react-native-share';
 
 const Supplier = ({ navigation, }) => {
 
@@ -106,7 +67,7 @@ const Supplier = ({ navigation, }) => {
         },
         {
           text: 'OK', onPress: () => {
-              FileViewer.open(downloadPath) // absolute-path-to-my-local-file.
+            FileViewer.open(downloadPath) // absolute-path-to-my-local-file.
               .then(() => {
               })
               .catch((error) => {
@@ -122,7 +83,31 @@ const Supplier = ({ navigation, }) => {
     }
   };
 
+  const copyFileToDownloads1 = async (fileName, mimeType) => {
+    try {
+      const { fs } = RNFetchBlob;
+      const assetFilePath = Platform.OS === 'android' ? `bundle-assets://${fileName}` : `${fs.dirs.MainBundleDir}/${fileName}`;
+      const downloadPath = `${fs.dirs.DownloadDir}/${fileName}`;
 
+      await fs.cp(assetFilePath, downloadPath);
+
+      // Alert.alert('Download Success', `File Path ${downloadPath}`);
+      try {
+        await Share.open({
+          url: `file://${downloadPath}`,
+          type: mimeType, // Adjust based on your file type
+          title: 'Share File',
+        });
+      } catch (error) {
+        console.log('Error sharing file:', error.message);
+        Alert.alert('Cancel', 'Failed to share file.');
+      }
+
+    } catch (error) {
+      console.log('Error copying file: ', error.message);
+      Alert.alert('Download Error', error.message);
+    }
+  };
 
   return (
     <SafeAreaView style={[{ backgroundColor: '#FFFFFF' }]}>
@@ -171,27 +156,37 @@ const Supplier = ({ navigation, }) => {
 
             {'\n'}<Text onPress={() => copyFileToDownloads('Pakistan.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('Pakistan.xlsx')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('Pakistan.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}2. Actors: We have compiled information on actors from the Punjabi film and television industry. This includes biographical details, filmography, and notable achievements. This data is useful for researchers studying the influence of media on language and culture.
 
-            {'\n'}<Text style={tw`underline text-base `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('Actors.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+
+            {'\n'}<Text onPress={() => copyFileToDownloads1('Actors.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}3. Special Writing: This category features unique and specialized forms of writing in Shahmukhi, including classical literature, historical documents, and contemporary writings. It provides insights into the evolution of the script and its application in various literary genres.
 
-            {'\n'}<Text style={tw`underline text-base `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('special_writing.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+
+            {'\n'}<Text onPress={() => copyFileToDownloads1('special_writing.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}4. Poetry: Punjabi poetry, particularly in Shahmukhi, has a profound impact on the cultural landscape. Our dataset includes a wide range of poetic works, from traditional forms like qasidas and nazms to modern expressions. This is an invaluable resource for literary studies and comparative analyses.
 
-            {'\n'}<Text style={tw`underline text-base `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('Peotry.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+
+            {'\n'}<Text onPress={() => copyFileToDownloads1('Poetry.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}5. Ghazals: The ghazal is a poetic form that has been popular in South Asia for centuries. Our dataset includes a collection of Shahmukhi ghazals, highlighting their thematic diversity and stylistic variations. This data supports research in literary traditions and poetic forms.
 
-            {'\n'}<Text style={tw`underline text-base `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('today_talks.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+
+            {'\n'}<Text onPress={() => copyFileToDownloads1('today_talks.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}6. Random Facts: This category includes an assortment of interesting and lesser-known facts about the Punjabi language, culture, and history. These facts serve as a resource for educators, researchers, and anyone interested in the richness of Punjabi heritage.
 
-            {'\n'}<Text style={tw`underline text-base `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('random_facts.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+
+            {'\n'}<Text onPress={() => copyFileToDownloads1('random_facts.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             <Text style={tw`font-bold  text-xl `}>{'\n'}Advancing Research and Applications</Text>
 
@@ -201,7 +196,9 @@ const Supplier = ({ navigation, }) => {
             {'\n'}- Text-to-Speech: Developing accurate text-to-speech systems for Shahmukhi.
             {'\n'}- Sentiment Analysis: Analyzing the sentiment of texts written in Shahmukhi.
             {'\n'}- Cultural Studies: Conducting in-depth studies on Punjabi culture and its literary traditions.
-            {'\n'}<Text style={tw`underline text-base font-bold`}>Click Here To Download Full Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('full_merged_file.xlsx')} style={tw`underline text-base text-green-400 `}>Click To Download The Full Dataset</Text> {'\n'}
+
+            {'\n'}<Text onPress={() => copyFileToDownloads1('full_merged_file.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
             <Text style={tw`font-bold  text-xl `}>{'\n'}Conclusion</Text>
 
             {'\n'}Language is a bridge that connects people, cultures, and histories. The Punjabi language, with its Shahmukhi script, is an essential part of South Asian heritage. Our efforts in building a comprehensive Shahmukhi dataset bank are aimed at preserving and promoting this script, enabling researchers and developers to explore its depths and applications.

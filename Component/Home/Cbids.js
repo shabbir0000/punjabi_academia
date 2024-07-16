@@ -85,8 +85,8 @@ const Cbids = ({ navigation }) => {
           <ActivityIndicator style={{ flex: 1, alignItems: 'center', alignSelf: 'center', justifyContent: 'center' }} size={'large'} />
           :
 
-          <>
-            <View style={tw`flex-row self-center  w-85 mt-15 h-50 items-center justify-between`}>
+           <View style={tw` justify-center items-center self-center flex-1`}>
+            <View style={tw`flex-row self-center  w-85 mt-10 h-50 items-center justify-between`}>
               <View style={[{ backgroundColor: "#00a897" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
 
                 <View style={tw` h-20 w-40 justify-start self-start items-start left-5 rounded-md`}>
@@ -188,7 +188,7 @@ const Cbids = ({ navigation }) => {
 
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("Category")
+                      navigation.navigate("Models")
                     }}
                   >
                     <Text style={tw`text-base underline font-medium text-green-500  `}>
@@ -227,7 +227,7 @@ const Cbids = ({ navigation }) => {
 
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("Categories")
+                      navigation.navigate("Supplier")
                     }}
                   >
                     <Text style={tw`text-base underline font-medium text-green-500  `}>
@@ -245,7 +245,7 @@ const Cbids = ({ navigation }) => {
               </View>
 
             </View>
-          </>
+            </View>
       }
     </>
 

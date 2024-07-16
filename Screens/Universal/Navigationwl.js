@@ -20,6 +20,9 @@ import Orders from '../Tabbar/Orders';
 import Updateprofile from '../../Component/Profile/Updateprofile';
 import Viewsupplierorder from '../Order/Viewsupplierorder';
 import Shareorder from '../Order/Shareorder';
+import Preprocessscript from '../../Component/Models/Preprocessscript';
+import Preprocessmodels from '../../Component/Models/Preprocessmodels';
+import Trainedmodel from '../../Component/Models/Trainedmodel';
 
 // import Home from '../Bottomtabs/Home';
 // import Tabbar from './Tabbar';
@@ -66,6 +69,9 @@ function Navigation() {
         <Stack.Screen name="Updateprofile" component={Updateprofile} />
         <Stack.Screen name="Viewsupplierorder" component={Viewsupplierorder} />
         <Stack.Screen name="Shareorder" component={Shareorder} />
+        <Stack.Screen name="Preprocessscript" component={Preprocessscript} />
+        <Stack.Screen name="Preprocessmodels" component={Preprocessmodels} />
+        <Stack.Screen name="Trainedmodel" component={Trainedmodel} />
         {/* <Stack.Screen name="Viewcatproduct" component={Viewcatproduct} /> */}
         {/* <Stack.Screen options={{
            cardStyle: { backgroundColor: '#fffff' }
