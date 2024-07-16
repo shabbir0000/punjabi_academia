@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499638445802",
+    "project_id": "shahmukhiacademia",
+    "storage_bucket": "shahmukhiacademia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499638445802:android:64bf5bf8db784ad8f69993",
+        "android_client_info": {
+          "package_name": "com.Shahmukhi_academia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvzNJwsHvVSbPBOEJZiV4Fl9ZcIfMn8zQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
