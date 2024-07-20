@@ -88,7 +88,7 @@ const Preprocessscript = ({ navigation }) => {
             <Screensheader
                 name={'Preprocess Model'}
                 left={10}
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.goBack()}
             />
             <Image
                 style={tw`h-60 absolute w-80 mt-65 self-center`}

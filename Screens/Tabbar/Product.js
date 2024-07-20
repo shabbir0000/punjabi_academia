@@ -59,61 +59,43 @@ const Product = ({ navigation }) => {
 
 
       <View style={tw`self-center flex-1 items-center justify-center`}>
-        {/* <View style={tw`h-70 w-70  rounded-full absolute `}> */}
-        <LottieView
-          style={tw`h-105 w-105 absolute`}
-          source={require("../../Images/Animation - 1721471215016.json")}
-          autoPlay
-          loop={true}
-          speed={1.5}
-        />
-        <TouchableOpacity
-          onPress={() => {
-            toggleModal()
-            settext1("GET")
-            settext2("Ready-To-Use Preproceesing CBOW Model")
-            setnav("Preprocessscript")
+
+        <View style={tw`h-100 w-80 self-center   `}>
+          <TouchableOpacity 
+          onPress={()=>{
+            navigation.navigate('Showoptionscreen')
           }}
-        >
-          <Image
-            resizeMode='contain'
-            style={tw`h-19 w-19 rounded-lg -top-15 right-20`}
-            source={require("../../Images/data-management.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            toggleModal()
-            settext1("GET")
-            settext2("Ready-To-Use Scripts For Preprocessing")
-            setnav("Preprocessmodels")
-          }}
-        >
+          >
+            <LottieView
+              style={tw`h-105 w-105 self-center absolute`}
+              source={require("../../Images/Animation - 1721471215016.json")}
+              autoPlay
+              loop={true}
+              speed={1.5}
+            />
 
-          <Image
-            resizeMode='contain'
-            style={tw`h-19 w-19 rounded-lg self-end left-35  `}
-            source={require("../../Images/script.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            toggleModal()
-            settext1("GET")
-            settext2("Ready-To-Run Trained 5+ Model CodesFiles ")
-            setnav("Trainedmodel")
-          }}
-        >
+            <Image
+              resizeMode='contain'
+              style={tw`h-19 w-19 self-end top-20  rounded-lg `}
+              source={require("../../Images/data-management.png")}
+            />
 
-          <Image
-            resizeMode='contain'
-            style={tw`h-19 w-19 rounded-lg -left-15 top-15`}
-            source={require("../../Images/ai.png")}
-          />
-        </TouchableOpacity>
+            <Image
+              resizeMode='contain'
+              style={tw`h-19 w-19 rounded-lg top-5  `}
+              source={require("../../Images/script.png")}
+            />
 
 
-        {/* </View> */}
+            <Image
+              resizeMode='contain'
+              style={tw`h-19 w-19 rounded-lg top-40 left-40`}
+              source={require("../../Images/ai.png")}
+            />
+
+          </TouchableOpacity>
+
+        </View>
       </View>
 
 
@@ -163,7 +145,7 @@ const Product = ({ navigation }) => {
                   navigation.navigate(nav)
                 }}
               >
-                <Text style={[tw`text-base underline font-medium `,{color:'#14B8A6'}]}>
+                <Text style={[tw`text-base underline font-medium `, { color: '#14B8A6' }]}>
                   {"Click Here"}
                 </Text>
               </TouchableOpacity>

@@ -87,7 +87,7 @@ const Trainedmodel = ({ navigation }) => {
       <Screensheader
         name={'Trained Model'}
         left={15}
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.goBack()}
       />
       <Image
         style={tw`h-60 w-80 absolute self-center mt-65`}

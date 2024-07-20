@@ -25,6 +25,7 @@ import preprocessmodels from '../../Component/Models/Preprocessmodels';
 import Trainedmodel from '../../Component/Models/Trainedmodel';
 import Aboutshahmukhi from '../../Component/Models/Aboutshahmukhi';
 import Aboutus from '../../Component/Models/Aboutus';
+import Showoptionscreen from '../../Component/Models/Showoptionscreen';
 
 // import Home from '../Bottomtabs/Home';
 // import Tabbar from './Tabbar';
@@ -76,6 +77,7 @@ function Navigation() {
         <Stack.Screen name="Trainedmodel" component={Trainedmodel} />
         <Stack.Screen name="Aboutshahmukhi" component={Aboutshahmukhi} />
         <Stack.Screen name="Aboutus" component={Aboutus} />
+        <Stack.Screen name="Showoptionscreen" component={Showoptionscreen} />
         
         
         

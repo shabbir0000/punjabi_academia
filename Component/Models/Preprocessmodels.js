@@ -89,7 +89,7 @@ const Preprocessmodels = ({ navigation }) => {
             <Screensheader
                 name={'Data Filtering Script'}
                 left={10}
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.goBack()}
             />
             <Image
                 style={tw`h-60 w-80 self-center absolute mt-65`}
