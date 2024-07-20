@@ -88,20 +88,7 @@ function Tabbar() {
             />
 
 
-            {
-                uvisible ?
-                    <Tab.Screen
-                        name="Orders"
-                        options={{
-
-                            tabBarLabel: 'Orders',
-                            tabBarIcon: ({ focused }) => (
-                                <Image style={tw`h-8 w-8`} source={focused ? require("../../Images/analyticsgg.png") : require("../../Images/analytics.png")} />
-                            ),
-                        }}
-                        component={Orders}
-                    />
-                    :
+           
                     <Tab.Screen
                         name="Supplier"
                         // initialParams={{
@@ -138,7 +125,7 @@ function Tabbar() {
                         component={Supplier}
                     />
 
-            }
+            
 
 
 

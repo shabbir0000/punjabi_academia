@@ -22,7 +22,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 import FileViewer from "react-native-file-viewer";
 import Share from 'react-native-share';
 
-const Preprocessmodels = () => {
+const Preprocessmodels = ({ navigation }) => {
 
     const copyFileToDownloads = async (fileName) => {
         try {
@@ -89,118 +89,134 @@ const Preprocessmodels = () => {
             <Screensheader
                 name={'Data Filtering Script'}
                 left={10}
-                onPress={() => navigation.goBack()}
+                onPress={() => navigation.navigate("Home")}
+            />
+            <Image
+                style={tw`h-60 w-80 self-center absolute mt-65`}
+                resizeMode='contain'
+                source={require("../../Images/scriptl.png")}
             />
             <ScrollView vertical showsVerticalScrollIndicator={true}>
                 <View style={tw`items-start self-center flex-1`}>
                     <Text style={tw`w-80 text-sm text-start  mt-5`}>
-                        <Text style={tw`font-bold  text-xl`}>The Importance of Preprocessing in Data Analysis: </Text> {'\n'}
-                        Data is the backbone of any analytical or research project. However, raw data, in its initial form, is often incomplete, inconsistent, and noisy, making it challenging to derive meaningful insights directly. This is where data preprocessing comes into play. Preprocessing is a crucial step that transforms raw data into a clean and structured format, making it ready for analysis. This process involves several steps such as cleaning, normalization, transformation, and feature extraction, which enhance the quality and utility of the data.
+                        <Text style={tw`font-bold  text-xl`}>The Role of Python Scripts in Data Preprocessing: </Text> {'\n'}
+                        Python scripts are a powerful and flexible way to automate tasks, especially when dealing with large datasets. A script is essentially a file containing a sequence of instructions that the Python interpreter can execute. Scripts are invaluable for data preprocessing, a crucial step in preparing data for analysis. This is particularly true for rare datasets, such as those involving the Shahmukhi script, which require specialized handling due to their scarcity and unique characteristics.    </Text>
+
+                    <Text style={tw`w-80 text-sm text-start mt-5`}>
+                        <Text style={tw`font-bold  text-xl `}>Importance of Preprocessing Rare Datasets  {'\n'}</Text>
+
+                        Rare datasets, like those for the Shahmukhi script of the Punjabi language, often pose significant challenges. They may contain inconsistencies, noise, and other issues that can affect the quality of analysis. Preprocessing these datasets involves cleaning and organizing the data, making it suitable for various research and analytical purposes. Python scripts are essential tools for this process, allowing for efficient, reproducible, and scalable data handling.
+                        <Text style={tw`font-bold  text-xl `}>{'\n'}Our Contribution: Building and Utilizing Python Scripts for Shahmukhi Data</Text>
+
+                        {'\n'}
+                        Recognizing the need for specialized preprocessing, my team and I have developed a series of Python scripts designed to handle over 3 million characters of data. These scripts perform various tasks, such as removing stop words, filtering out English text, scraping data, removing special characters, and merging datasets. Our efforts have resulted in a comprehensive and ready-to-use dataset for research, specifically tailored for the Shahmukhi script.
+                        {'\n'}
                     </Text>
                     <Image
                         style={tw`h-60 w-80`}
                         resizeMode='contain'
-                        source={require("../../Images/rawdata.png")}
+                        source={require("../../Images/preprocesslist.png")}
                     />
-                    <Text style={tw`w-80 text-sm text-start mt-5`}>
-                        <Text style={tw`font-bold  text-xl `}>Understanding Raw Data  {'\n'}</Text>
-
-
-                        Raw data refers to the unprocessed, original data collected from various sources. It can include text, numbers, images, audio, and more. This data is usually messy, containing errors, missing values, duplicates, and irrelevant information. Without preprocessing, the raw data can lead to inaccurate analysis, unreliable models, and poor decision-making.
-
-                        In the context of rare datasets, such as those involving the Shahmukhi script of the Punjabi language, preprocessing becomes even more critical. Shahmukhi, a variant of the Persian script, is primarily used in Pakistan and holds significant cultural and linguistic value. However, resources and datasets for Shahmukhi are not as readily available as for more widely spoken languages. This scarcity makes the preprocessing of such data both challenging and essential.
-
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}The Importance of Preprocessing Rare Datasets</Text>
-
-                        {'\n'}
-                        Rare datasets, like those in Shahmukhi, require specialized preprocessing techniques to handle their unique characteristics and complexities. Proper preprocessing ensures that the data is accurate, complete, and ready for analysis. Here are some key reasons why preprocessing is vital for rare datasets:
-
-                        {'\n'}
-                        Accuracy: Preprocessing helps in identifying and correcting errors in the data. For rare datasets, even minor errors can lead to significant inaccuracies in analysis.
-                        {'\n'}
-                        Completeness: It fills in missing values and removes duplicates, ensuring that the dataset is comprehensive and reliable.
-                        {'\n'}
-                        Consistency: Preprocessing standardizes the data format, making it consistent and easy to work with.
-                        {'\n'}
-                        Noise Reduction: It removes irrelevant information, reducing noise and enhancing the signal in the data.
-                        {'\n'}
-                        Feature Extraction: Preprocessing helps in extracting meaningful features from the raw data, which are crucial for building effective models.          </Text>
-                    <Image
-                        style={tw`h-40 w-80 mt-5`}
-                        resizeMode='contain'
-                        source={require("../../Images/datapreprocess.png")}
-                    />
-
                     <Text style={tw`w-80 text-sm text-start pb-40 `}>
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}Building the Shahmukhi Dataset Bank</Text>
-
-                        {'\n'}
-                        Recognizing the importance of preprocessing, my team and I embarked on a project to build a comprehensive dataset bank for the Shahmukhi script. This involved collecting over 12,000 rows of data from various sources, followed by meticulous preprocessing to ensure the data's quality and usability.
+                        <Text style={tw`font-bold  text-xl `}>{'\n'}Key Python Scripts and Their Functions</Text>
 
 
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}Data Collection</Text>
+                        <Text style={tw`font-bold  text-base `}>{'\n'}Stop Words Removal Script</Text>
 
                         {'\n'}
-                        Our data collection process involved sourcing information from diverse domains such as literature, media, historical documents, and online resources. We aimed to create a well-rounded dataset that covers various aspects of the Shahmukhi script. The categories we focused on include:
-                        {'\n'}
-                        Pakistan: Data specific to the region, including geographical information, cultural nuances, and socio-political contexts.
-                        {'\n'}
-                        Actors: Biographical details, filmography, and achievements of actors from the Punjabi film and television industry.
-                        {'\n'}
-                        Special Writing: Classical literature, historical documents, and contemporary writings in Shahmukhi.
-                        {'\n'}
-                        Poetry: A wide range of poetic works, from traditional forms like qasidas and nazms to modern expressions.
-                        {'\n'}
-                        Ghazals: Collection of Shahmukhi ghazals, highlighting their thematic diversity and stylistic variations.
-                        {'\n'}
-                        Random Facts: Interesting and lesser-known facts about the Punjabi language, culture, and history.
-
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}Data Preprocessing</Text>
-
-                        {'\n'}
-                        Once the data was collected, we employed a series of preprocessing steps to clean and structure it. These steps included:
-                        {'\n'}
-                        Data Cleaning: Removing errors, inconsistencies, and irrelevant information from the raw data.
-                        {'\n'}
-                        Normalization: Standardizing the data format to ensure uniformity.
-                        {'\n'}
-                        Missing Value Imputation: Filling in missing values to create a complete dataset.
-                        {'\n'}
-                        Deduplication: Removing duplicate entries to avoid redundancy.
-                        {'\n'}
-                        Categorization: Organizing the data into predefined categories for easier analysis.
+                        Purpose: Stop words are common words that usually do not contribute significant meaning to the text analysis. Examples include "is," "the," "and," etc. Removing these words helps in focusing on the more meaningful parts of the text.            {'\n'}
 
 
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}The Role of the Continuous Bag of Words (CBOW) Model in Preprocessing</Text>
+                        {'\n'}<Text onPress={() => copyFileToDownloads('stop_words_cleaning.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The Script</Text> {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('stop_words_cleaning.ipynb', 'application/octet-stream')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Share The Script On Anywhere</Text> {'\n'}
+
+                        <Text style={tw`font-bold  text-base `}>{'\n'}English Text Removal Script</Text>
 
                         {'\n'}
-                        To further enhance the quality of our dataset, we employed the Continuous Bag of Words (CBOW) model, a popular technique in natural language processing (NLP) for word embedding. The CBOW model helps in understanding the context of words by predicting a target word based on its surrounding context words. This model is particularly useful for generating similar words and understanding semantic relationships within the text.
+                        Purpose: When working with Shahmukhi datasets, it's essential to filter out any English text that might be mixed in, ensuring the dataset remains pure.
+                        {'\n'}
+                        {'\n'}<Text onPress={() => copyFileToDownloads('englishRemoveScript.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The Script</Text> {'\n'}
 
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}How CBOW Works</Text>
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('englishRemoveScript.ipynb', 'application/octet-stream')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Share The Script On Anywhere</Text> {'\n'}
 
-                        {'\n'}
-                        The CBOW model operates by training on a large corpus of text to learn the representations of words in a continuous vector space. During training, the model takes a context window (a fixed-size window of words surrounding a target word) and uses it to predict the target word. The key steps involved in the CBOW model are:
-                        {'\n'}
-                        Context Window: Define a context window size, which is the number of words surrounding the target word.
-                        {'\n'}
-                        Input Layer: Convert the context words into one-hot vectors, creating an input matrix.
-                        {'\n'}
-                        Hidden Layer: Pass the input matrix through a hidden layer to generate the average context vector.
-                        {'\n'}
-                        Output Layer: Use the average context vector to predict the target word, converting it back to a one-hot vector.
-                        {'\n'}
-                        Training: Adjust the weights of the model using backpropagation and gradient descent to minimize the prediction error.
 
-                        {'\n'}<Text onPress={() => copyFileToDownloads('cbow_model_training.ipynb')} style={tw`underline text-base text-green-400 `}>Click To Download The CBOW Model Code</Text> {'\n'}
-
-                        {'\n'}<Text onPress={() => copyFileToDownloads1('cbow_model_training.ipynb', 'application/octet-stream')} style={tw`underline text-base text-green-400 `}>Click To Share The Modal Code On Anywhere</Text> {'\n'}
-
-                        <Text style={tw`font-bold  text-xl `}>{'\n'}Conclution</Text>
+                        <Text style={tw`font-bold  text-base `}>{'\n'}Web Scraping Script</Text>
 
                         {'\n'}
-                        Preprocessing is a critical step in transforming raw data into a clean and structured format, especially for rare datasets like those involving the Shahmukhi script. By meticulously collecting and preprocessing over 12,000 rows of data, my team and I have built a comprehensive dataset bank that is ready for research and analysis.
+                        Purpose: Web scraping involves extracting data from websites. This script automates the process of gathering Shahmukhi text from various online sources.
                         {'\n'}
-                        The use of the Continuous Bag of Words (CBOW) model further enhanced the quality of our dataset, enabling better semantic understanding and similar word generation. This dataset bank serves as a valuable resource for researchers, linguists, and developers working on Shahmukhi and Punjabi language projects.
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads('scrapping.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The Script</Text> {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('scrapping.ipynb', 'application/octet-stream')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Share The Script On Anywhere</Text> {'\n'}
+
+
+                        <Text style={tw`font-bold  text-base `}>{'\n'}Special Character Removal Script</Text>
+
+                        {'\n'}
+                        Purpose: Special characters can introduce noise into the dataset. Removing them helps in standardizing the text.
+
+                        {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads('merge_data_script.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The Script</Text> {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('merge_data_script.ipynb', 'application/octet-stream')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Share The Script On Anywhere</Text> {'\n'}
+
+
+                        <Text style={tw`font-bold  text-base `}>{'\n'}Letter Occurrences Script</Text>
+
+                        {'\n'}
+                        Purpose: Analyzing the frequency of each letter in a text is essential for various linguistic and statistical analyses. This script helps in determining the occurrences of each letter within a given text, which can be particularly useful in preprocessing and understanding the characteristics of the text. This is especially important for rare datasets, like Shahmukhi, where specific letters may have unique frequencies and distributions that need to be studied.
+                        {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads('letter_occurencies_script.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The Script</Text> {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('letter_occurencies_script.ipynb', 'application/octet-stream')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Share The Script On Anywhere</Text> {'\n'}
+
+
+
+
+                        <Text style={tw`font-bold  text-base `}>{'\n'}Merge All Data Script</Text>
+
+                        {'\n'}
+                        Purpose: After preprocessing individual data sources, it's essential to merge them into a single, cohesive dataset. This script handles that task.                        {'\n'}
+                        {'\n'}<Text onPress={() => copyFileToDownloads('cbow_model_training.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The Script</Text> {'\n'}
+
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('cbow_model_training.ipynb', 'application/octet-stream')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Share The Script On Anywhere</Text> {'\n'}
+
+
+                        <Text style={tw`font-bold  text-xl `}>{'\n'}Preprocessing Pipeline for Shahmukhi Data</Text>
+
+                        {'\n'}
+                        Data Collection: Gather raw Shahmukhi text data from various sources using the scraping script.
+                        {'\n'}
+                        {'\n'}
+                        Cleaning:
+                        {'\n'}
+                        1.Remove English text using the English removal script.
+                        {'\n'}
+                        2.Filter out stop words with the stop words removal script.
+                        {'\n'}
+                        3.Eliminate special characters using the special character removal script
+                        {'\n'}
+                        Merging: Combine all cleaned datasets into a single dataset using the merge script.
+
+                        {'\n'}
+                        Validation: Verify the integrity and quality of the final dataset through manual and automated checks
+
+                        <Text style={tw`font-bold  text-xl `}>{'\n'}Impact and Results</Text>
+
+                        {'\n'}
+                        By employing these scripts, we processed over 3 million characters of Shahmukhi data, resulting in a high-quality, ready-to-use dataset for research. This comprehensive preprocessing ensured that the dataset is:
+                        {'\n'}
+                        Accurate: Free from errors, inconsistencies, and irrelevant information.
+                        {'\n'}
+                        Complete: Covers various categories and domains relevant to the Shahmukhi script.
+                        {'\n'}
+                        Consistent: Standardized in format, making it easy to work with.
+                        {'\n'}
+                        Rich: Contains meaningful and diverse data, enhancing its utility for various research purposes.
 
                     </Text>
                 </View>

@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { collection, deleteDoc, doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../Firebase';
+import LottieView from 'lottie-react-native';
 
 
 const Product = ({ navigation }) => {
@@ -58,55 +59,61 @@ const Product = ({ navigation }) => {
 
 
       <View style={tw`self-center flex-1 items-center justify-center`}>
-        <View style={tw`h-70 w-70 border-2 border-green-500 rounded-full absolute shadow-md shadow-green-500 `}>
-
-          <TouchableOpacity
-            onPress={() => {
-              toggleModal()
-              settext1("GET")
-              settext2("Ready-To-Use Preproceesing CBOW Model")
-              setnav("Preprocessscript")
-            }}
-          >
-            <Image
-              resizeMode='contain'
-              style={tw`h-19 w-19 rounded-lg -top-5 left-5`}
-              source={require("../../Images/data-management.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-           onPress={() => {
+        {/* <View style={tw`h-70 w-70  rounded-full absolute `}> */}
+        <LottieView
+          style={tw`h-105 w-105 absolute`}
+          source={require("../../Images/Animation - 1721471215016.json")}
+          autoPlay
+          loop={true}
+          speed={1.5}
+        />
+        <TouchableOpacity
+          onPress={() => {
+            toggleModal()
+            settext1("GET")
+            settext2("Ready-To-Use Preproceesing CBOW Model")
+            setnav("Preprocessscript")
+          }}
+        >
+          <Image
+            resizeMode='contain'
+            style={tw`h-19 w-19 rounded-lg -top-15 right-20`}
+            source={require("../../Images/data-management.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
             toggleModal()
             settext1("GET")
             settext2("Ready-To-Use Scripts For Preprocessing")
             setnav("Preprocessmodels")
           }}
-          >
+        >
 
-            <Image
-              resizeMode='contain'
-              style={tw`h-19 w-19 rounded-lg self-end left-7  `}
-              source={require("../../Images/script.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-           onPress={() => {
+          <Image
+            resizeMode='contain'
+            style={tw`h-19 w-19 rounded-lg self-end left-35  `}
+            source={require("../../Images/script.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
             toggleModal()
             settext1("GET")
             settext2("Ready-To-Run Trained 5+ Model CodesFiles ")
             setnav("Trainedmodel")
           }}
-          >
+        >
 
-            <Image
-              resizeMode='contain'
-              style={tw`h-19 w-19 rounded-lg left-15 top-15`}
-              source={require("../../Images/ai.png")}
-            />
-          </TouchableOpacity>
+          <Image
+            resizeMode='contain'
+            style={tw`h-19 w-19 rounded-lg -left-15 top-15`}
+            source={require("../../Images/ai.png")}
+          />
+        </TouchableOpacity>
 
 
-        </View>
+        {/* </View> */}
       </View>
 
 
@@ -116,13 +123,13 @@ const Product = ({ navigation }) => {
         onDismiss={toggleModal}
         animationIn={'bounceInUp'}
         isVisible={isModalVisible}>
-        <View style={{ borderRadius: 50}}>
-          <View style={[{ backgroundColor: "#00a897" }, tw` flex flex-col items-start h-60 w-70 justify-around self-center  rounded-3xl`]} >
+        <View style={{ borderRadius: 50 }}>
+          <View style={[{ backgroundColor: "#1E3A8A" }, tw` flex flex-col items-start h-60 w-70 justify-around self-center  rounded-3xl`]} >
 
             <TouchableOpacity
               onPress={() => {
                 toggleModal()
-               
+
               }}
             >
               <View
@@ -156,7 +163,7 @@ const Product = ({ navigation }) => {
                   navigation.navigate(nav)
                 }}
               >
-                <Text style={tw`text-base underline font-medium text-green-200  `}>
+                <Text style={[tw`text-base underline font-medium `,{color:'#14B8A6'}]}>
                   {"Click Here"}
                 </Text>
               </TouchableOpacity>

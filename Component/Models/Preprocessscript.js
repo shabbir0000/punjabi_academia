@@ -22,7 +22,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 import FileViewer from "react-native-file-viewer";
 import Share from 'react-native-share';
 
-const Preprocessscript = () => {
+const Preprocessscript = ({ navigation }) => {
 
     const copyFileToDownloads = async (fileName) => {
         try {
@@ -86,9 +86,14 @@ const Preprocessscript = () => {
     return (
         <SafeAreaView style={[{ backgroundColor: '#FFFFFF' }]}>
             <Screensheader
-                name={'Preprocess Script'}
+                name={'Preprocess Model'}
                 left={10}
-                onPress={() => navigation.goBack()}
+                onPress={() => navigation.navigate("Home")}
+            />
+            <Image
+                style={tw`h-60 absolute w-80 mt-65 self-center`}
+                resizeMode='contain'
+                source={require("../../Images/data-preparation.png")}
             />
             <ScrollView vertical showsVerticalScrollIndicator={true}>
                 <View style={tw`items-start self-center flex-1`}>
@@ -98,11 +103,7 @@ const Preprocessscript = () => {
 
                         Data is the backbone of any analytical or research project. However, raw data, in its initial form, is often incomplete, inconsistent, and noisy, making it challenging to derive meaningful insights directly. This is where data preprocessing comes into play. Preprocessing is a crucial step that transforms raw data into a clean and structured format, making it ready for analysis. This process involves several steps such as cleaning, normalization, transformation, and feature extraction, which enhance the quality and utility of the data.
                     </Text>
-                    <Image
-                        style={tw`h-60 w-80`}
-                        resizeMode='contain'
-                        source={require("../../Images/rawdata.png")}
-                    />
+
                     <Text style={tw`w-80 text-sm text-start mt-5`}>
                         <Text style={tw`font-bold  text-xl `}>Understanding Raw Data  {'\n'}</Text>
 
@@ -127,9 +128,9 @@ const Preprocessscript = () => {
                         {'\n'}
                         Feature Extraction: Preprocessing helps in extracting meaningful features from the raw data, which are crucial for building effective models.          </Text>
                     <Image
-                        style={tw`h-40 w-80 mt-5`}
+                        style={tw`h-60 w-80`}
                         resizeMode='contain'
-                        source={require("../../Images/datapreprocess.png")}
+                        source={require("../../Images/rawdata.png")}
                     />
 
                     <Text style={tw`w-80 text-sm text-start pb-40 `}>
@@ -192,9 +193,9 @@ const Preprocessscript = () => {
                         {'\n'}
                         Training: Adjust the weights of the model using backpropagation and gradient descent to minimize the prediction error.
 
-                        {'\n'}<Text onPress={() => copyFileToDownloads('cbow_model_training.ipynb')} style={tw`underline text-base text-green-400 `}>Click To Download The CBOW Model Code</Text> {'\n'}
+                        {'\n'}<Text onPress={() => copyFileToDownloads('cbow_model_training.ipynb')} style={[tw`underline text-base `, { color: '#14B8A6' }]}>Click To Download The CBOW Model Code</Text> {'\n'}
 
-                        {'\n'}<Text onPress={() => copyFileToDownloads1('cbow_model_training.ipynb', 'application/octet-stream')} style={tw`underline text-base text-green-400 `}>Click To Share The Modal Code On Anywhere</Text> {'\n'}
+                        {'\n'}<Text onPress={() => copyFileToDownloads1('cbow_model_training.ipynb', 'application/octet-stream')} style={[tw`underline text-base  `, { color: '#14B8A6' }]}>Click To Share The Modal Code On Anywhere</Text> {'\n'}
 
                         <Text style={tw`font-bold  text-xl `}>{'\n'}Conclution</Text>
 

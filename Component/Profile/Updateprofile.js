@@ -225,8 +225,8 @@ const Updateprofile = ({ navigation, route }) => {
                                                         <View style={tw`mt-10`}>
                                                             <Buttonnormal
                                                                 onPress={handleSubmit}
-                                                                c1={'#199A8E'}
-                                                                c2={'#199A8E'}
+                                                                c1={'#1E3A8A'}
+                                                                c2={'#1E3A8A'}
                                                                 style={tw`text-white`}
                                                                 title={"UPDATE PROFILE"}
                                                             />

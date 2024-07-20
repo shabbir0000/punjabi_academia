@@ -56,10 +56,10 @@ const Forget = ({ navigation }) => {
         />
         <View style={tw`items-center`}>
           <View style={tw`w-80 h-20 items-start justify-center mt-5`}>
-            <Text style={[tw`text-3xl font-bold text-gray-400`, { color: '#199A8E' }]}>
+            <Text style={[tw`text-3xl font-bold text-gray-400`, { color: '#1E3A8A' }]}>
               Forget Your Password?
             </Text>
-            <Text style={[tw`text-sm font-normal text-gray-400`, { color: '#199A8E' }]}>
+            <Text style={[tw`text-sm font-normal text-gray-400`, { color: '#1E3A8A' }]}>
               Enter Your Email We Will Send You A Code
             </Text>
           </View>
@@ -82,8 +82,8 @@ const Forget = ({ navigation }) => {
                   // navigation.navigate('Code')
                   RESETemail()
                 }}
-                c1={'#199A8E'}
-                c2={'#199A8E'}
+                c1={'#1E3A8A'}
+                c2={'#1E3A8A'}
                 style={tw`text-white`}
                 title={"SEND CODE"}
               />

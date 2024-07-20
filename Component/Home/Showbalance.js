@@ -6,6 +6,7 @@ import { useIsFocused } from '@react-navigation/native';
 import { getAuth } from 'firebase/auth';
 import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { app, db } from '../../Firebase';
+import LottieView from 'lottie-react-native';
 
 
 
@@ -35,8 +36,14 @@ const Showbalance = () => {
    
     return (
          <>
-        <LinearGradient colors={['#199A8E', '#00a897']} style={tw`top-10 flex flex-row items-center justify-center self-center h-35 w-85 rounded-xl`} >
-
+        <LinearGradient colors={['#1E3A8A', '#00a897']} style={tw`top-10 flex flex-row items-center justify-center self-center h-35 w-85 rounded-xl`} >
+        {/* <LottieView
+          style={tw`self-center  h-40`}
+          source={require("../../Images/Animation - 1721470448469.json")}
+          autoPlay
+          loop={true}
+          speed={0.5}
+        /> */}
 
 
             {/* // balance dev */}

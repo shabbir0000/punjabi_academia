@@ -172,7 +172,7 @@ const App = () => {
     <>
       {
         flag ? 
-         <ActivityIndicator style={{flex:1, justifyContent:'center' , alignSelf:'center'}} size={'large'}/>
+         <ActivityIndicator color={"#1E3A8A"} style={{flex:1, justifyContent:'center' , alignSelf:'center'}} size={'large'}/>
         :
         id ?
           <AppProvider>

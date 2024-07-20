@@ -112,10 +112,10 @@ const Login = ({ navigation }) => {
         />
         <View style={tw`items-center`}>
           <View style={tw`w-80 h-20 items-center justify-center mt-5`}>
-            <Text style={[tw`text-3xl font-bold text-gray-400`, { color: '#199A8E' }]}>
+            <Text style={[tw`text-3xl font-bold text-gray-400`, { color: '#1E3A8A' }]}>
               Welcome
             </Text>
-            <Text style={[tw`text-sm font-normal text-gray-400`, { color: '#199A8E' }]}>
+            <Text style={[tw`text-sm font-normal text-gray-400`, { color: '#1E3A8A' }]}>
               Sign in to acess your account
             </Text>
           </View>
@@ -177,13 +177,13 @@ const Login = ({ navigation }) => {
                 navigation.navigate('Forget')
               }}
             >
-              <Text style={[tw` text-center`, { color: '#199A8E' }]}>Forgot Password?</Text>
+              <Text style={[tw` text-center`, { color: '#1E3A8A' }]}>Forgot Password?</Text>
             </TouchableOpacity>
           </View>
 
           {
             loading ?
-              <ActivityIndicator size={'large'} color={'#199A8E'} />
+              <ActivityIndicator size={'large'} color={'#1E3A8A'} />
               :
               <View style={tw` justify-between w-80 h-15 mt-5 `}>
                 <Buttonnormal
@@ -191,8 +191,8 @@ const Login = ({ navigation }) => {
                     // navigation.navigate('Tabbar')
                     loginwithemailandpass()
                   }}
-                  c1={'#199A8E'}
-                  c2={'#199A8E'}
+                  c1={'#1E3A8A'}
+                  c2={'#1E3A8A'}
                   style={tw`text-white`}
                   title={"LOGIN"}
                 />
@@ -207,11 +207,11 @@ const Login = ({ navigation }) => {
             }}
           >
             <View style={tw`mt-5`}>
-
+              
               <Text>
                 New Member?
 
-                <Text style={{ color: '#199A8E' }}> Sign Up Now</Text>
+                <Text style={{ color: '#1E3A8A' }}> Sign Up Now</Text>
 
               </Text>
             </View>

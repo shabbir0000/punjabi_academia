@@ -21,8 +21,10 @@ import RNFS from 'react-native-fs';
 import RNFetchBlob from 'rn-fetch-blob';
 import FileViewer from "react-native-file-viewer";
 import Share from 'react-native-share';
+import LottieView from 'lottie-react-native';
 
 const Supplier = ({ navigation, }) => {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     requestStoragePermission();
@@ -116,10 +118,24 @@ const Supplier = ({ navigation, }) => {
         left={20}
         onPress={() => navigation.goBack()}
       />
+      <TouchableOpacity
+      onPress={()=>{
+        setLoading(!loading)
+      }}
+      >
+      <LottieView
+        style={tw`h-100 w-100 self-center mt-30 absolute`}
+        source={require("../../Images/Animation - 1721472102710.json")}
+        autoPlay
+        loop={loading}
+        speed={1.9}
+      />
+      </TouchableOpacity>
       <ScrollView vertical showsVerticalScrollIndicator={true}>
         <View style={tw`items-start self-center flex-1`}>
-          <Text style={tw`w-80 text-sm text-start  mt-5`}>
-            <Text style={tw`font-bold  text-xl`}>The Significance of Language and the Role of Punjabi Shahmukhi: </Text>
+
+          <Text style={[tw`w-80 text-sm text-start  mt-5`]}>
+            <Text style={[tw`font-bold  text-xl`]}>The Significance of Language and the Role of Punjabi Shahmukhi: </Text>
 
             Language is a fundamental aspect of human civilization, serving as a medium for communication, expression, and cultural preservation. It is through language that societies pass on knowledge, traditions, and values from one generation to the next. In the context of South Asia, the Punjabi language holds a significant place, being one of the most widely spoken languages in the region.
 
@@ -154,39 +170,39 @@ const Supplier = ({ navigation, }) => {
 
             {'\n'}1. Pakistan: This category includes data specific to the region of Pakistan, encompassing geographical information, cultural nuances, and socio-political contexts relevant to the Punjabi-speaking population.
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('Pakistan.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('Pakistan.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('Pakistan.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('Pakistan.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}2. Actors: We have compiled information on actors from the Punjabi film and television industry. This includes biographical details, filmography, and notable achievements. This data is useful for researchers studying the influence of media on language and culture.
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('Actors.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('Actors.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('Actors.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('Actors.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}3. Special Writing: This category features unique and specialized forms of writing in Shahmukhi, including classical literature, historical documents, and contemporary writings. It provides insights into the evolution of the script and its application in various literary genres.
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('special_writing.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('special_writing.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('special_writing.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('special_writing.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}4. Poetry: Punjabi poetry, particularly in Shahmukhi, has a profound impact on the cultural landscape. Our dataset includes a wide range of poetic works, from traditional forms like qasidas and nazms to modern expressions. This is an invaluable resource for literary studies and comparative analyses.
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('Peotry.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('Peotry.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('Poetry.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('Poetry.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}5. Ghazals: The ghazal is a poetic form that has been popular in South Asia for centuries. Our dataset includes a collection of Shahmukhi ghazals, highlighting their thematic diversity and stylistic variations. This data supports research in literary traditions and poetic forms.
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('today_talks.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('today_talks.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('today_talks.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('today_talks.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             {'\n'}6. Random Facts: This category includes an assortment of interesting and lesser-known facts about the Punjabi language, culture, and history. These facts serve as a resource for educators, researchers, and anyone interested in the richness of Punjabi heritage.
 
-            {'\n'}<Text onPress={() => copyFileToDownloads('random_facts.xlsx')} style={tw`underline text-base text-green-400 `}>Click Here To Download The Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('random_facts.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click Here To Download The Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('random_facts.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('random_facts.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
 
             <Text style={tw`font-bold  text-xl `}>{'\n'}Advancing Research and Applications</Text>
 
@@ -196,9 +212,9 @@ const Supplier = ({ navigation, }) => {
             {'\n'}- Text-to-Speech: Developing accurate text-to-speech systems for Shahmukhi.
             {'\n'}- Sentiment Analysis: Analyzing the sentiment of texts written in Shahmukhi.
             {'\n'}- Cultural Studies: Conducting in-depth studies on Punjabi culture and its literary traditions.
-            {'\n'}<Text onPress={() => copyFileToDownloads('full_merged_file.xlsx')} style={tw`underline text-base text-green-400 `}>Click To Download The Full Dataset</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads('full_merged_file.xlsx')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Download The Full Dataset</Text> {'\n'}
 
-            {'\n'}<Text onPress={() => copyFileToDownloads1('full_merged_file.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={tw`underline text-base text-green-400 `}>Click To Share The Dataset On Anywhere</Text> {'\n'}
+            {'\n'}<Text onPress={() => copyFileToDownloads1('full_merged_file.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')} style={[tw`underline text-base `,{color:'#14B8A6'}]}>Click To Share The Dataset On Anywhere</Text> {'\n'}
             <Text style={tw`font-bold  text-xl `}>{'\n'}Conclusion</Text>
 
             {'\n'}Language is a bridge that connects people, cultures, and histories. The Punjabi language, with its Shahmukhi script, is an essential part of South Asian heritage. Our efforts in building a comprehensive Shahmukhi dataset bank are aimed at preserving and promoting this script, enabling researchers and developers to explore its depths and applications.

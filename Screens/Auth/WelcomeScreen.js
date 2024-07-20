@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: '#009688',
+    color: '#1E3A8A',
     marginBottom: 10,
   },
   subtitle: {
@@ -54,26 +54,26 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   loginButton: {
-    backgroundColor: '#009688',
+    backgroundColor: '#1E3A8A',
     paddingVertical: 15,
     paddingHorizontal: 80,
     borderRadius: 30,
     marginBottom: 20,
   },
   loginButtonText: {
-    color: '#fff',
+    color: '#fffff',
     fontSize: 16,
     fontWeight: 'bold',
   },
   signUpButton: {
-    borderColor: '#009688',
+    borderColor: '#1E3A8A',
     borderWidth: 1,
     paddingVertical: 15,
     paddingHorizontal: 80,
     borderRadius: 30,
   },
   signUpButtonText: {
-    color: '#009688',
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
   },

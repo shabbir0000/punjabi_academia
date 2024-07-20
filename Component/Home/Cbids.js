@@ -85,9 +85,18 @@ const Cbids = ({ navigation }) => {
           <ActivityIndicator style={{ flex: 1, alignItems: 'center', alignSelf: 'center', justifyContent: 'center' }} size={'large'} />
           :
 
-           <View style={tw` justify-center items-center self-center flex-1`}>
+          <View style={tw` justify-center items-center self-center flex-1`}>
+            <LottieView
+              style={tw`h-130 w-130 absolute`}
+              source={require("../../Images/Animation - 1721470448469.json")}
+              autoPlay
+              loop={true}
+              speed={0.7}
+            />
             <View style={tw`flex-row self-center  w-85 mt-10 h-50 items-center justify-between`}>
-              <View style={[{ backgroundColor: "#00a897" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
+              <View
+                style={[{ backgroundColor: "#1E3A8A" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]}
+              >
 
                 <View style={tw` h-20 w-40 justify-start self-start items-start left-5 rounded-md`}>
                   <Image
@@ -102,16 +111,16 @@ const Cbids = ({ navigation }) => {
                   <Text style={tw`text-xl font-medium text-gray-100 `}>
                     {"Who"}
                   </Text>
-                  <Text style={tw`text-base font-medium text-gray-100  `}>
+                  <Text style={[tw`text-base font-medium text-gray-100  `, {}]}>
                     {"Are We? About Us"}
                   </Text>
 
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("Category")
+                      navigation.navigate("Aboutus")
                     }}
                   >
-                    <Text style={tw`text-base underline font-medium text-green-500  `}>
+                    <Text style={[tw`text-base underline font-medium `, { color: '#14B8A6' }]}>
                       {"Click Here"}
                     </Text>
                   </TouchableOpacity>
@@ -125,7 +134,7 @@ const Cbids = ({ navigation }) => {
 
               </View>
 
-              <View style={[{ backgroundColor: "#00a897" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
+              <View style={[{ backgroundColor: "#1E3A8A" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
 
 
                 <View style={tw` h-20 w-40 justify-start self-start items-start left-5 rounded-md`}>
@@ -147,10 +156,10 @@ const Cbids = ({ navigation }) => {
 
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("Categories")
+                      navigation.navigate("Aboutshahmukhi")
                     }}
                   >
-                    <Text style={tw`text-base underline font-medium text-green-500  `}>
+                    <Text style={[tw`text-base underline font-medium `, { color: '#14B8A6' }]}>
                       {"Click Here"}
                     </Text>
                   </TouchableOpacity>
@@ -167,7 +176,7 @@ const Cbids = ({ navigation }) => {
             </View>
 
             <View style={tw`flex-row self-center  w-85 mt-10 h-50 items-center justify-between`}>
-              <View style={[{ backgroundColor: "#00a897" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
+              <View style={[{ backgroundColor: "#1E3A8A" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
 
                 <View style={tw` h-20 w-40 justify-start self-start items-start left-5 rounded-md`}>
                   <Image
@@ -191,7 +200,7 @@ const Cbids = ({ navigation }) => {
                       navigation.navigate("Models")
                     }}
                   >
-                    <Text style={tw`text-base underline font-medium text-green-500  `}>
+                    <Text style={[tw`text-base underline font-medium `, { color: '#14B8A6' }]}>
                       {"Click Here"}
                     </Text>
                   </TouchableOpacity>
@@ -205,7 +214,7 @@ const Cbids = ({ navigation }) => {
 
               </View>
 
-              <View style={[{ backgroundColor: "#00a897" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
+              <View style={[{ backgroundColor: "#1E3A8A" }, tw` flex flex-col items-center justify-around self-center h-50 w-38 rounded-3xl`]} >
 
 
                 <View style={tw` h-20 w-40 justify-start self-start items-start left-5 rounded-md`}>
@@ -230,7 +239,7 @@ const Cbids = ({ navigation }) => {
                       navigation.navigate("Supplier")
                     }}
                   >
-                    <Text style={tw`text-base underline font-medium text-green-500  `}>
+                    <Text style={[tw`text-base underline font-medium `, { color: '#14B8A6' }]}>
                       {"Click Here"}
                     </Text>
                   </TouchableOpacity>
@@ -245,7 +254,7 @@ const Cbids = ({ navigation }) => {
               </View>
 
             </View>
-            </View>
+          </View>
       }
     </>
 

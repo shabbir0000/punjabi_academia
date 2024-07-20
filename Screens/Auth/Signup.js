@@ -41,7 +41,7 @@ const Signup = ({ navigation }) => {
 
           setDoc(doc(db, 'Signup', userid), {
             fullname: name,
-            role: 'user',
+            role: 'admin',
             email: email.toLowerCase(),
             password,
             userid,
@@ -54,7 +54,7 @@ const Signup = ({ navigation }) => {
                 fullname: name,
                 email: email.toLowerCase(),
                 profilephoto: '',
-                role: 'user',
+                role: 'admin',
                 userid,
                 timestamp: serverTimestamp(),
               })
@@ -100,10 +100,10 @@ const Signup = ({ navigation }) => {
         />
         <View style={tw`items-center`}>
           <View style={tw`w-80 h-20 items-center justify-center mt-5`}>
-            <Text style={[tw`text-3xl font-bold text-gray-400`, { color: '#199A8E' }]}>
+            <Text style={[tw`text-3xl font-bold text-gray-400`, { color: '#1E3A8A' }]}>
               Great
             </Text>
-            <Text style={[tw`text-sm font-normal text-gray-400`, { color: '#199A8E' }]}>
+            <Text style={[tw`text-sm font-normal text-gray-400`, { color: '#1E3A8A' }]}>
               Sign Up To Create Your Account
             </Text>
           </View>
@@ -145,7 +145,7 @@ const Signup = ({ navigation }) => {
 
           {
             loading ?
-              <ActivityIndicator size="large" color="#199A8E" />
+              <ActivityIndicator size="large" color="#1E3A8A" />
               :
               <View style={tw` justify-between w-80 h-15 mt-5 `}>
                 <Buttonnormal
@@ -153,8 +153,8 @@ const Signup = ({ navigation }) => {
                     // navigation.navigate('Tabbar')
                     Signinwithemailandpass()
                   }}
-                  c1={'#199A8E'}
-                  c2={'#199A8E'}
+                  c1={'#1E3A8A'}
+                  c2={'#1E3A8A'}
                   style={tw`text-white`}
                   title={"SIGNUP"}
                 />
@@ -174,7 +174,7 @@ const Signup = ({ navigation }) => {
               <Text>
                 Already Member?
 
-                <Text style={{ color: '#199A8E' }}> Login Now</Text>
+                <Text style={{ color: '#1E3A8A' }}> Login Now</Text>
 
               </Text>
             </View>

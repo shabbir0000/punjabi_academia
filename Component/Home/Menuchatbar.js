@@ -33,7 +33,7 @@ const Menuchatbar = ({navigation}) => {
   }, []);
 
   return (
-    <View style={[tw`top-5 flex w-80  self-center justify-between flex-row `, {backgroundColor: '#FFFFFF'}]}>
+    <View style={[tw`top-5 flex w-80  self-center justify-between flex-row `, {backgroundColor: '#F3F4F6'}]}>
       <View style={tw`w-65 flex  flex-row `}>
         <Text numberOfLines={1} style={tw`text-lg font-medium text-gray-600`}>Welcome {GetData[0]?.selecteduser.fullname}</Text>
         {/* <Highfy width={20}  height={20}/> */}

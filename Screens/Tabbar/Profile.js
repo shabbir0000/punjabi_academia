@@ -35,7 +35,7 @@ const Profile = ({ navigation }) => {
       <View style={tw`h-80 w-full`}>
         <Image
           style={tw`h-80 w-full absolute`}
-          source={require('../../Images/gradient.png')}
+          source={require('../../Images/deepbluebg.png')}
         />
 
        

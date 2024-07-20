@@ -64,7 +64,7 @@ const Home = ({navigation,route}) => {
 
   return (
     <>
-      <View style={[tw`flex flex-1`, {backgroundColor: '#FFFFFF'}]}>
+      <View style={[tw`flex flex-1`, {backgroundColor: '#F3F4F6'}]}>
         <Menuchatbar navigation={navigation} />
         <Showbalance   />
 

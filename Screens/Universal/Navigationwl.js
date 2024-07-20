@@ -23,6 +23,7 @@ import Shareorder from '../Order/Shareorder';
 import Preprocessscript from '../../Component/Models/Preprocessscript';
 import Preprocessmodels from '../../Component/Models/Preprocessmodels';
 import Trainedmodel from '../../Component/Models/Trainedmodel';
+import Aboutshahmukhi from '../../Component/Models/Aboutshahmukhi';
 
 // import Home from '../Bottomtabs/Home';
 // import Tabbar from './Tabbar';
@@ -72,6 +73,8 @@ function Navigation() {
         <Stack.Screen name="Preprocessscript" component={Preprocessscript} />
         <Stack.Screen name="Preprocessmodels" component={Preprocessmodels} />
         <Stack.Screen name="Trainedmodel" component={Trainedmodel} />
+        <Stack.Screen name="Aboutshahmukhi" component={Aboutshahmukhi} />
+        <Stack.Screen name="Aboutus" component={Aboutus} />
         {/* <Stack.Screen name="Viewcatproduct" component={Viewcatproduct} /> */}
         {/* <Stack.Screen options={{
            cardStyle: { backgroundColor: '#fffff' }
