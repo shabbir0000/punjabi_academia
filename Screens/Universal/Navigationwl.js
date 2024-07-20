@@ -24,6 +24,7 @@ import Preprocessscript from '../../Component/Models/Preprocessscript';
 import Preprocessmodels from '../../Component/Models/Preprocessmodels';
 import Trainedmodel from '../../Component/Models/Trainedmodel';
 import Aboutshahmukhi from '../../Component/Models/Aboutshahmukhi';
+import Aboutus from '../../Component/Models/Aboutus';
 
 // import Home from '../Bottomtabs/Home';
 // import Tabbar from './Tabbar';
